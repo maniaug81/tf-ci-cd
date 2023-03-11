@@ -29,7 +29,7 @@ resource "aws_subnet" "us-east-vpc-tf-pub-sub-1a" {
   }
 }
 
-resource "aws_subnet" "manishVPC-tf-pub-sub-1b" {
+resource "aws_subnet" "us-east-vpc-tf-pub-sub-1b" {
   vpc_id     = aws_vpc.us-east-vpc-tf.id
   cidr_block = "192.168.2.0/24"
   availability_zone = var.az1b
@@ -37,6 +37,27 @@ resource "aws_subnet" "manishVPC-tf-pub-sub-1b" {
 
   tags = {
     Name = "us-east-vpc-tf-pub-sub-1b"
+    Project = "test-tf"    
+  }
+}
+resource "aws_subnet" "us-east-vpc-tf-priv-sub-1a" {
+  vpc_id     = aws_vpc.us-east-vpc-tf.id
+  cidr_block = "192.168.3.0/24"
+  availability_zone = var.az1a
+
+  tags = {
+    Name = "us-east-vpc-tf-priv-sub-1a"
+    Project = "test-tf"    
+  }
+}
+
+resource "aws_subnet" "us-east-vpc-tf-priv-sub-1b" {
+  vpc_id     = aws_vpc.us-east-vpc-tf.id
+  cidr_block = "192.168.4.0/24"
+  availability_zone = var.az1b
+
+  tags = {
+    Name = "us-east-vpc-tf-priv-sub-1b"
     Project = "test-tf"    
   }
 }
