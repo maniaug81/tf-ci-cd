@@ -81,4 +81,4 @@ resource "aws_subnet" "us-east-vpc-tf-rds-sub-1b" {
     Name = "us-east-vpc-tf-rds-sub-1b"
     Project = "test-tf"    
   }
-}
+} 
