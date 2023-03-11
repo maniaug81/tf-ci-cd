@@ -61,3 +61,24 @@ resource "aws_subnet" "us-east-vpc-tf-priv-sub-1b" {
     Project = "test-tf"    
   }
 }
+resource "aws_subnet" "us-east-vpc-tf-rds-sub-1a" {
+  vpc_id     = aws_vpc.us-east-vpc-tf.id
+  cidr_block = "192.168.5.0/24"
+  availability_zone = var.az1a
+
+  tags = {
+    Name = "us-east-vpc-tf-rds-sub-1a"
+    Project = "test-tf"    
+  }
+}
+
+resource "aws_subnet" "us-east-vpc-tf-rds-sub-1b" {
+  vpc_id     = aws_vpc.us-east-vpc-tf.id
+  cidr_block = "192.168.6.0/24"
+  availability_zone = var.az1b
+
+  tags = {
+    Name = "us-east-vpc-tf-rds-sub-1b"
+    Project = "test-tf"    
+  }
+}
